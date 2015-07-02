@@ -28,7 +28,7 @@ STATUS_MESSAGES = {
 def redirect_next(request, field_name, settings_name):
     try:
         # get safe url from user input
-        url = request.REQUEST[field_name]
+        url = request.GET[field_name]
         url = urlunsplit(('','')+urlsplit(url)[2:])
     except:
         url = resolve_url(getattr(settings, settings_name, '/'))
@@ -38,10 +38,10 @@ def redirect_next(request, field_name, settings_name):
 def login(request, redirect_field_name=REDIRECT_FIELD_NAME,
           complete_view='fas-complete'):
     complete_url = resolve_url(complete_view)
-    if redirect_field_name in request.REQUEST:
+    if redirect_field_name in request.GET:
         (scheme, netloc, path, query_string, fragment) = urlsplit(complete_url)
         fields = parse_qs(query_string)
-        fields[redirect_field_name] = request.REQUEST[redirect_field_name]
+        fields[redirect_field_name] = request.GET[redirect_field_name]
         complete_url = urlunsplit(('', '', path, urlencode(fields), fragment))
     return redirect(Consumer(request).get_url(complete_url=complete_url))
 
