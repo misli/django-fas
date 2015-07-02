@@ -11,6 +11,7 @@ setup(
     description  = 'Django auth backend for FAS (Fedora Accounts System)',
     author       = 'Jakub Dorňák',
     author_email = 'jdornak@redhat.com',
+    license      = 'BSD',
     url          = 'https://github.com/misli/django-fas',
     packages     = ['fas'],
     classifiers  = [
