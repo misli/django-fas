@@ -1,7 +1,6 @@
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth import login as auth_login, logout as auth_logout, authenticate, REDIRECT_FIELD_NAME
-from django.core.urlresolvers import resolve
 from django.http import HttpResponseRedirect
 from django.shortcuts import resolve_url, redirect
 from django.utils.translation import ugettext_lazy as _
