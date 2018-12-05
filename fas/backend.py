@@ -7,8 +7,8 @@ from openid.extensions import sreg
 from .consumer import SUCCESS
 
 class FasBackend(ModelBackend):
-    def authenticate(self, response):
-        if response.status != SUCCESS:
+    def authenticate(self, request=None, *, response=None):
+        if response is None or response.status != SUCCESS:
             raise PermissionDenied()
         User = get_user_model()
         response = sreg.SRegResponse.fromSuccessResponse(response)
