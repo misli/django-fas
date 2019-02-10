@@ -7,7 +7,7 @@ from setuptools import setup
 
 setup(
     name         = 'django-fas',
-    version      = '1.2.0',
+    version      = '1.2.1',
     description  = 'Django auth backend for FAS (Fedora Accounts System)',
     author       = 'Jakub Dorňák',
     author_email = 'jdornak@redhat.com',
